@@ -1,0 +1,9 @@
+﻿,Protocolo A (inadequado),Protocolo B (adequado)
+registros,44206.000000,23400.000000
+sinteticos,20806.000000,0.000000
+positivos_conjunto,0.500000,0.055427
+treino_por_particao,39785.000000,21000.000000
+teste_por_particao,4421.000000,2400.000000
+positivos_teste,0.499887,0.054583
+sinteticos_no_teste,2077.000000,0.000000
+atletas_em_treino_e_teste,234.000000,0.000000

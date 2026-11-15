@@ -1,0 +1,6 @@
+﻿,media,desvio,referencia_acaso
+precision,0.000000,0.000000,0.050069
+recall,0.000000,0.000000,
+f1,0.000000,0.000000,
+roc_auc,0.495071,0.020953,0.500000
+average_precision,0.050562,0.003411,0.050069

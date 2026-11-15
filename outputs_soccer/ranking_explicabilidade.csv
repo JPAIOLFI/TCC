@@ -1,0 +1,11 @@
+﻿,gini,permutacao,shap_abs_medio,posicao_gini,posicao_permutacao,posicao_shap
+Age,0.070876,-0.016699,0.036408,7,8,7
+Heart_Rate,0.168645,0.031168,0.086584,1,1,1
+Oxygen_Saturation,0.143867,-0.021136,0.060004,3,10,3
+Muscle_Activity,0.161892,0.019580,0.072628,2,2,2
+Motion_X,0.139219,-0.012224,0.059210,5,6,5
+Motion_Y,0.128966,-0.013200,0.055078,6,7,6
+Motion_Z,0.140716,-0.019382,0.059397,4,9,4
+Gender_Male,0.016866,0.002952,0.009125,8,4,9
+Training_Intensity_Low,0.013034,-0.004998,0.007212,10,5,10
+Training_Intensity_Medium,0.015919,0.007112,0.010321,9,3,8

@@ -1,0 +1,11 @@
+﻿particao,cortes,n_cortes,apontados_no_teste,excecoes_no_teste,precisao,recall,f1,f1_regra_fixa,predicoes_iguais_a_regra_fixa,registros_no_teste
+0,Heart_Rate > 179.979 OU Muscle_Activity > 79.868,2,21,0,1.000000,0.160305,0.276316,0.276316,2400,2400
+1,Heart_Rate > 179.979 OU Muscle_Activity > 79.868,2,14,0,1.000000,0.106061,0.191781,0.191781,2400,2400
+2,Heart_Rate > 179.979 OU Muscle_Activity > 79.722,2,14,1,0.928571,0.096296,0.174497,0.175676,2399,2400
+3,Heart_Rate > 179.979 OU Muscle_Activity > 79.868,2,15,0,1.000000,0.108696,0.196078,0.196078,2400,2400
+4,Heart_Rate > 179.979 OU Muscle_Activity > 79.868,2,7,0,1.000000,0.056000,0.106061,0.106061,2300,2300
+5,Heart_Rate > 179.969 OU Muscle_Activity > 79.868,2,12,1,0.916667,0.088000,0.160584,0.161765,2299,2300
+6,Heart_Rate > 179.979 OU Muscle_Activity > 79.868,2,11,0,1.000000,0.088000,0.161765,0.161765,2300,2300
+7,Heart_Rate > 179.979 OU Muscle_Activity > 79.868,2,14,0,1.000000,0.110236,0.198582,0.198582,2300,2300
+8,Heart_Rate > 179.979 OU Muscle_Activity > 79.868,2,13,0,1.000000,0.100775,0.183099,0.183099,2300,2300
+9,Heart_Rate > 179.979 OU Muscle_Activity > 79.868,2,13,0,1.000000,0.100000,0.181818,0.181818,2300,2300

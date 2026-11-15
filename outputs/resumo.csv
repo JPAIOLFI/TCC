@@ -1,0 +1,9 @@
+﻿,valor
+n_regra,132.000000
+cobertura,0.101773
+taxa_resid,0.050069
+maior_d_resid,0.064378
+f1_regra_base,0.184745
+melhor_f1,0.183294
+f1_regra_particoes,0.183294
+dif_recall_smote,0.831470
