@@ -1,4 +1,4 @@
-# Rotulagem e protocolos de validação na avaliação de classificadores em bases sintéticas de monitoramento esportivo
+# Avaliação de classificadores de aprendizado de máquina em uma base sintética de monitoramento esportivo: auditoria de rótulos e protocolos de validação
 
 Código e dados do Trabalho de Conclusão de Curso de João Pedro Aiolfi de Figueiredo
 (Bacharelado em Ciência da Computação, PUCRS, 2026), sob orientação da
@@ -18,7 +18,7 @@ Requer Python 3.13.
 
 ```bash
 pip install -r requirements.txt
-python pipeline.py     # todos os números do Capítulo 5, em outputs/ e outputs_soccer/ (15 a 25 min)
+python pipeline.py     # todos os números do Capítulo 5, em outputs/ e outputs_soccer/ (cerca de 40 min)
 python figuras.py      # todas as figuras, em fig_leve/ (lê os resultados do passo anterior)
 python regra_nas_particoes.py   # experimento da Seção 5.2.3 (alguns segundos)
 ```
@@ -36,7 +36,7 @@ versões listadas em `requirements.txt`.
 | `data/athlete_physiological_dataset.csv` | Base principal: 23.400 registros de 234 atletas |
 | `data/soccer_physiological_data.csv` | Recorte de futebol: 5.100 registros, todos contidos na base principal |
 | `outputs/` | Resultados da base completa (CSV) |
-| `outputs_soccer/` | Resultados do subgrupo de futebol (CSV) |
+| `outputs_soccer/` | Resultados do subconjunto de futebol (CSV) |
 | `fig_leve/` | Figuras usadas no texto |
 | `tcc_latex.tex` | Texto da monografia (classe `tcc` da PUCRS) |
 
@@ -58,7 +58,7 @@ versões listadas em `requirements.txt`.
 | Figura 5.9, árvore ilustrativa | `arvore_folhas.csv` |
 | Tabelas 5.11 e 5.12, protocolos de SMOTE | `protocolos_smote.csv`, `leakage_smote.csv` |
 | Tabela 5.13, agrupamento por atleta | `leakage_grupo.csv` |
-| Tabela 5.14, subgrupo de futebol | arquivos de mesmo nome em `outputs_soccer/` |
+| Tabela 5.14, subconjunto de futebol | arquivos de mesmo nome em `outputs_soccer/` |
 
 O arquivo `predicoes_por_particao.csv` traz, para cada um dos 23.400 registros, o atleta, a
 partição em que foi avaliado, o rótulo, a saída da regra e a predição fora da amostra do

@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-Rotulagem e protocolos de validacao na avaliacao de classificadores em bases
-sinteticas de monitoramento esportivo. TCC II, Ciencia da Computacao, PUCRS.
+Avaliacao de classificadores de aprendizado de maquina em uma base sintetica
+de monitoramento esportivo: auditoria de rotulos e protocolos de validacao. TCC II, Ciencia da Computacao, PUCRS.
 
 Este script reproduz todos os numeros do Capitulo 5. Cada secao indica a
 tabela da tese que ela gera. Os resultados sao gravados em outputs/ (base
-completa) e outputs_soccer/ (subgrupo de futebol). As figuras sao geradas a
+completa) e outputs_soccer/ (subconjunto de futebol). As figuras sao geradas a
 partir desses arquivos por figuras.py.
 
-Uso:  python pipeline.py          (cerca de 15 a 25 minutos)
+Uso:  python pipeline.py          (cerca de 40 minutos)
 """
 import time
 import warnings
