@@ -269,7 +269,7 @@ O episódio não é isolado: casos de parada cardíaca em atletas de alto rendim
 
 Esses eventos são estatisticamente raros, com incidência estimada entre 1 e 3 casos por 100 mil atletas \cite{mckelvie2024morte}, e justamente por isso sua repercussão é desproporcional à frequência. Eles expõem a dificuldade de converter uma avaliação pontual em decisão sobre risco: um exame fotografa o estado do atleta em um instante, enquanto o risco se manifesta sob esforço, meses ou anos depois. É essa lacuna que motiva o interesse por acompanhamento contínuo, e é ela que conecta o problema clínico ao problema computacional tratado aqui.
 
-Atletas de alto rendimento competem em calendários densos, com pouco tempo de recuperação entre as partidas. Essa rotina impõe ao corpo uma carga que pode levar à fadiga acumulada e, em casos extremos, a eventos graves durante o esforço.
+Atletas de alto rendimento competem em calendários densos, com pouco tempo de recuperação entre as disputas. Essa rotina impõe ao corpo uma carga que pode levar à fadiga acumulada e, em casos extremos, a eventos graves durante o esforço.
 
 Nas últimas duas décadas, equipamentos vestidos pelo próprio atleta passaram a registrar essa carga de forma contínua. Faixas torácicas medem a frequência cardíaca, oxímetros acompanham a oxigenação do sangue, e sensores de movimento registram aceleração em três direções. Esses equipamentos são chamados de dispositivos vestíveis, ou \textit{wearables}. Uma comissão técnica que acompanha um elenco profissional pode acumular milhares de medições por semana \cite{seshadri2019}.
 
@@ -528,9 +528,7 @@ Por operar apenas sobre os pesos, e não sobre os dados, essa estratégia não o
 
 \subsection{Sobreamostragem Sintética}
 
-A sobreamostragem sintética atua antes do treinamento, modificando o conjunto de exemplos. A técnica SMOTE foi configurada para igualar a quantidade de exemplos das duas classes, gerando registros artificiais da classe minoritária por interpolação entre vizinhos próximos.
-
-Esta é a estratégia que exige maior cuidado de implementação, porque a ordem das operações determina se o experimento é válido. A geração precisa ocorrer depois da separação entre treinamento e avaliação, e incidir apenas sobre a porção de treinamento. Caso contrário, registros artificiais derivados de exemplos reservados à avaliação acabam incorporados ao treinamento, e o modelo é avaliado sobre informação que já viu em forma interpolada.
+A sobreamostragem sintética atua antes do treinamento, modificando o conjunto de exemplos. A técnica SMOTE foi configurada para igualar a quantidade de exemplos das duas classes. É a estratégia que exige maior cuidado de implementação, porque a ordem das operações determina se o experimento é válido: a geração precisa ocorrer depois da separação entre treinamento e avaliação e incidir apenas sobre a porção de treinamento.
 
 Para garantir essa ordem, o SMOTE não foi aplicado diretamente sobre os dados. Ele foi encadeado junto ao classificador em uma estrutura de \textit{pipeline} fornecida pela biblioteca \texttt{imbalanced-learn}, que delega à rotina de validação cruzada a responsabilidade de executar a geração separadamente dentro de cada partição de treinamento. A Seção~\ref{sec:smote_leak} quantifica o que ocorre quando essa precaução é omitida.
 
@@ -982,7 +980,7 @@ Em conjunto, os dois experimentos reforçam a leitura proposta sem, contudo, dem
 
 \subsection{Ajuste do Limiar de Decisão}
 
-O ajuste de limiar foi conduzido sobre as três partições disjuntas descritas na Seção~\ref{sec:estrategias}: treinamento com 140 atletas e 14.000 registros, calibração com 47 atletas e 4.700 registros, e avaliação com 47 atletas e 4.700 registros. A verificação de sobreposição confirmou que nenhum atleta aparece em mais de uma partição.
+O ajuste de limiar foi conduzido sobre as três partições disjuntas descritas na Seção~\ref{sec:estrategias}: treinamento com 140 atletas e 14.000 registros, calibração com 47 atletas e 4.700 registros, e avaliação com 47 atletas e 4.700 registros. A verificação de sobreposição confirmou que nenhum atleta aparece em mais de uma partição. Como essas partições são fixas, e não obtidas por validação cruzada, os resultados não são diretamente comparáveis aos das 11 configurações da Tabela~\ref{tab:resultados}.
 
 A Figura~\ref{fig:pr_curve} apresenta a curva Precisão $\times$ Recall e o comportamento das métricas em função do limiar, calculados sobre a partição de calibração, que é onde a escolha ocorre. O limiar que maximiza o F1-Score nessa partição é $0{,}4750$.
 
@@ -1019,8 +1017,6 @@ O ganho é de $0{,}0069$ em F1-Score, e decorre da reclassificação de um únic
 \end{figure}
 
 A matriz da esquerda corresponde ao limiar padrão, de 0{,}5, e a da direita, ao limiar calibrado. A diferença entre as duas se resume a um único registro, que deixa de ser falso negativo e passa a verdadeiro positivo, o que confirma a concentração das probabilidades estimadas nos extremos.
-
-Os números desta seção não são diretamente comparáveis aos das 11 configurações da Tabela~\ref{tab:resultados}, porque o ajuste de limiar opera sobre partições fixas, e não por validação cruzada sobre a base completa. A redução do conjunto de treinamento de cerca de 90\% para 60\% dos atletas, necessária para acomodar a partição de calibração, reforça essa diferença, e por isso os resultados são apresentados como análise complementar.
 
 Na literatura, a calibração de limiar é apresentada como recurso para deslocar o equilíbrio entre precisão e recall em cenários de classe rara. Nesta base, esse recurso teve efeito praticamente nulo, e o motivo é informativo: quando o modelo atribui probabilidades concentradas nos extremos, não existe faixa intermediária sobre a qual o limiar possa operar. A ausência de ganho, portanto, não indica falha do procedimento, e sim que a estrutura das estimativas não oferece margem para esse tipo de ajuste.
 
