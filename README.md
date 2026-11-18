@@ -38,7 +38,6 @@ versões listadas em `requirements.txt`.
 | `outputs/` | Resultados da base completa (CSV) |
 | `outputs_soccer/` | Resultados do subconjunto de futebol (CSV) |
 | `fig_leve/` | Figuras usadas no texto |
-| `tcc_latex.tex` | Texto da monografia (classe `tcc` da PUCRS) |
 
 ## Onde está cada resultado da tese
 

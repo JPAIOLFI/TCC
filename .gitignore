@@ -7,3 +7,7 @@ __pycache__/
 
 # Material de estudo pessoal, fora do repositorio
 estudo_*.ipynb
+
+# Texto da monografia, mantido no Overleaf
+tcc_latex.tex
+tcc.cls
